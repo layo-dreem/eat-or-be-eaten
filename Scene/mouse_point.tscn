@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://wqdxfmctj2xw"]
+
+[ext_resource type="Script" uid="uid://m7csdgl7cyt4" path="res://Script/MousePoint.cs" id="1_ctfen"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2f8h"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_obx0m"]
+material = SubResource("StandardMaterial3D_y2f8h")
+radius = 0.1
+height = 0.2
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m13ap"]
+radius = 0.10367298
+
+[node name="MousePoint" type="Area3D" unique_id=1410225811]
+script = ExtResource("1_ctfen")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1581921274]
+mesh = SubResource("SphereMesh_obx0m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1846989183]
+shape = SubResource("SphereShape3D_m13ap")
