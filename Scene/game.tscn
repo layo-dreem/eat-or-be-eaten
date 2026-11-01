@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ck3qb2ybir8ah" path="res://Scene/player.tscn" id="1_mhtsl"]
 [ext_resource type="PackedScene" uid="uid://bb48q8b4t6ej6" path="res://Scene/wolf.tscn" id="2_w51g1"]
+[ext_resource type="PackedScene" uid="uid://dsn3tnc7i120h" path="res://Scene/mouse_manager.tscn" id="3_4jv7b"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x4ydk"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -90,3 +91,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.939537, 0, 0)
 
 [node name="Close4" type="Node3D" parent="ClosePosition" unique_id=527097826]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082883835, 0, -10.00428)
+
+[node name="MouseManager" parent="." unique_id=2025493869 instance=ExtResource("3_4jv7b")]
