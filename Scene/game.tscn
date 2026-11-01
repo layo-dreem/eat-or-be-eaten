@@ -38,20 +38,55 @@ mesh = SubResource("BoxMesh_8llua")
 [node name="Player" parent="." unique_id=111026033 instance=ExtResource("1_mhtsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16103691, 0.8591072, 0.005580187)
 
-[node name="Wolf1Positions" type="Node3D" parent="." unique_id=126561275]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -6)
-
-[node name="Position1" type="Node3D" parent="Wolf1Positions" unique_id=875959742]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.7776604)
-
-[node name="Position2" type="Node3D" parent="Wolf1Positions" unique_id=1757276031]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2.5295815)
-
-[node name="Position3" type="Node3D" parent="Wolf1Positions" unique_id=433030188]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6708188, 0, 2.5295815)
-
-[node name="Wolf" parent="Wolf1Positions" unique_id=1222250232 node_paths=PackedStringArray("positions") instance=ExtResource("2_w51g1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.441057, 0, -1.8747602)
-positions = [NodePath("../Position1"), NodePath("../Position2"), NodePath("../Position3")]
+[node name="Wolf" parent="." unique_id=1222250232 node_paths=PackedStringArray("far_positions", "middle_positions", "close_positions") instance=ExtResource("2_w51g1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1317439, 0, -1.106039)
 time_before_action = 5.0
-movement_chance = 70.0
+movement_chance = 100.0
+far_positions = [NodePath("../FarPositions/Far1"), NodePath("../FarPositions/Far2"), NodePath("../FarPositions/Far3"), NodePath("../FarPositions/Far4")]
+middle_positions = [NodePath("../MiddlePosition/Middle1"), NodePath("../MiddlePosition/Middle2"), NodePath("../MiddlePosition/Middle3"), NodePath("../MiddlePosition/Middle4")]
+close_positions = [NodePath("../ClosePosition/Close1"), NodePath("../ClosePosition/Close2"), NodePath("../ClosePosition/Close3"), NodePath("../ClosePosition/Close4")]
+
+[node name="FarPositions" type="Node3D" parent="." unique_id=816171522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05309677, 0.41109276, 0)
+
+[node name="Far1" type="Node3D" parent="FarPositions" unique_id=1159923119]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.682041, 0, 0)
+
+[node name="Far2" type="Node3D" parent="FarPositions" unique_id=1113987256]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13438606, 0, -10.00428)
+
+[node name="Far3" type="Node3D" parent="FarPositions" unique_id=123953734]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11454201, 0, 9.943414)
+
+[node name="Far4" type="Node3D" parent="FarPositions" unique_id=1108556037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.888035, 0, 0)
+
+[node name="MiddlePosition" type="Node3D" parent="." unique_id=1613599255]
+transform = Transform3D(0.7633453, 0, 0, 0, 1, 0, 0, 0, 0.8063732, -0.05309677, 0.41109276, 0)
+
+[node name="Middle1" type="Node3D" parent="MiddlePosition" unique_id=1230716417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.630539, 0, 0)
+
+[node name="Middle2" type="Node3D" parent="MiddlePosition" unique_id=843154751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06303978, 0, 9.943414)
+
+[node name="Middle3" type="Node3D" parent="MiddlePosition" unique_id=1695468172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.939537, 0, 0)
+
+[node name="Middle4" type="Node3D" parent="MiddlePosition" unique_id=1697457425]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082883835, 0, -10.00428)
+
+[node name="ClosePosition" type="Node3D" parent="." unique_id=1006939900]
+transform = Transform3D(0.4163005, 0, 0, 0, 1, 0, 0, 0, 0.39663538, -0.05309677, 0.41109276, 0)
+
+[node name="Close1" type="Node3D" parent="ClosePosition" unique_id=833175763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.630539, 0, 0)
+
+[node name="Close2" type="Node3D" parent="ClosePosition" unique_id=733226375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06303978, 0, 9.943414)
+
+[node name="Close3" type="Node3D" parent="ClosePosition" unique_id=1126043885]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.939537, 0, 0)
+
+[node name="Close4" type="Node3D" parent="ClosePosition" unique_id=527097826]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082883835, 0, -10.00428)
