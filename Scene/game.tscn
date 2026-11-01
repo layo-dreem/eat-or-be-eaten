@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bcwrp3u6hic5e"]
+
+[ext_resource type="PackedScene" uid="uid://ck3qb2ybir8ah" path="res://Scene/player.tscn" id="1_mhtsl"]
+[ext_resource type="PackedScene" uid="uid://bb48q8b4t6ej6" path="res://Scene/wolf.tscn" id="2_w51g1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x4ydk"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_mhtsl"]
+sky_material = SubResource("ProceduralSkyMaterial_x4ydk")
+
+[sub_resource type="Environment" id="Environment_w51g1"]
+background_mode = 2
+sky = SubResource("Sky_mhtsl")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8llua"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_8llua"]
+
+[node name="Game" type="Node3D" unique_id=176496745]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=689558153]
+environment = SubResource("Environment_w51g1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1092990309]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2048729503]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_8llua")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1385663058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.440595, 0.8591072, 0.005580187)
+mesh = SubResource("BoxMesh_8llua")
+
+[node name="Player" parent="." unique_id=111026033 instance=ExtResource("1_mhtsl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16103691, 0.8591072, 0.005580187)
+
+[node name="Wolf" parent="." unique_id=1222250232 node_paths=PackedStringArray("positions") instance=ExtResource("2_w51g1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.441057, 0, -7.87476)
+positions = [NodePath("../Wolf1Positions/Position1"), NodePath("../Wolf1Positions/Position2"), NodePath("../Wolf1Positions/Position3")]
+time_before_action = 5.0
+movement_chance = 70.0
+
+[node name="Wolf1Positions" type="Node3D" parent="." unique_id=126561275]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -6)
+
+[node name="Position1" type="Node3D" parent="Wolf1Positions" unique_id=875959742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -1.7776604)
+
+[node name="Position2" type="Node3D" parent="Wolf1Positions" unique_id=1757276031]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2.5295815)
+
+[node name="Position3" type="Node3D" parent="Wolf1Positions" unique_id=433030188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6708188, 0, 2.5295815)

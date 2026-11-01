@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bb48q8b4t6ej6"]
+
+[ext_resource type="Script" uid="uid://b57lljb54b6g" path="res://Script/wolf.gd" id="1_vd1m1"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_8llua"]
+
+[node name="Wolf" type="Node3D" unique_id=1222250232]
+script = ExtResource("1_vd1m1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=38468526]
+mesh = SubResource("PrismMesh_8llua")
+
+[node name="ActionTimer" type="Timer" parent="." unique_id=488703853]
+
+[connection signal="timeout" from="ActionTimer" to="." method="_on_action_timer_timeout"]

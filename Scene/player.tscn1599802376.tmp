@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ck3qb2ybir8ah"]
+
+[ext_resource type="Script" uid="uid://kiatqo1wrhj2" path="res://Script/player.gd" id="1_kelma"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8llua"]
+
+[node name="Player" type="MeshInstance3D" unique_id=111026033]
+mesh = SubResource("CapsuleMesh_8llua")
+script = ExtResource("1_kelma")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1728441406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5762075, 0)
+
+[node name="TurnRight" type="Button" parent="." unique_id=2115242463]
+offset_left = 1052.0
+offset_top = 247.0
+offset_right = 1152.0
+offset_bottom = 331.0
+text = "Right
+"
+
+[node name="TurnLeft" type="Button" parent="." unique_id=386498587]
+offset_top = 247.0
+offset_right = 100.0
+offset_bottom = 331.0
+text = "Left"
+
+[connection signal="pressed" from="TurnRight" to="." method="_on_turn_right_pressed"]
+[connection signal="pressed" from="TurnLeft" to="." method="_on_turn_left_pressed"]
