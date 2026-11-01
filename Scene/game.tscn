@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ck3qb2ybir8ah" path="res://Scene/player.tscn" id="1_mhtsl"]
 [ext_resource type="PackedScene" uid="uid://bb48q8b4t6ej6" path="res://Scene/wolf.tscn" id="2_w51g1"]
 [ext_resource type="PackedScene" uid="uid://dsn3tnc7i120h" path="res://Scene/mouse_manager.tscn" id="3_4jv7b"]
+[ext_resource type="PackedScene" uid="uid://bky6kbtmv5x2c" path="res://Scene/mouse_corpse.tscn" id="4_03iqk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x4ydk"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -36,8 +37,10 @@ mesh = SubResource("PlaneMesh_8llua")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.440595, 0.8591072, 0.005580187)
 mesh = SubResource("BoxMesh_8llua")
 
-[node name="Player" parent="." unique_id=111026033 instance=ExtResource("1_mhtsl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16103691, 0.8591072, 0.005580187)
+[node name="Player" parent="." unique_id=111026033 node_paths=PackedStringArray("mouse_manager", "mouse_corpse") instance=ExtResource("1_mhtsl")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.16103691, 0.8591072, 0.005580187)
+mouse_manager = NodePath("../MouseManager")
+mouse_corpse = NodePath("../MouseCorpse")
 
 [node name="Wolf" parent="." unique_id=1222250232 node_paths=PackedStringArray("far_positions", "middle_positions", "close_positions") instance=ExtResource("2_w51g1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1317439, 0, -1.106039)
@@ -93,3 +96,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.939537, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082883835, 0, -10.00428)
 
 [node name="MouseManager" parent="." unique_id=2025493869 instance=ExtResource("3_4jv7b")]
+
+[node name="MouseCorpse" parent="." unique_id=1077613647 instance=ExtResource("4_03iqk")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.024627686, -0.92177254)
+food = 10

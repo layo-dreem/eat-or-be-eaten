@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bb48q8b4t6ej6"]
 
-[ext_resource type="Script" uid="uid://b57lljb54b6g" path="res://Script/wolf.gd" id="1_vd1m1"]
+[ext_resource type="Script" uid="uid://b57lljb54b6g" path="res://Script/Wolf.gd" id="1_vd1m1"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_8llua"]
 

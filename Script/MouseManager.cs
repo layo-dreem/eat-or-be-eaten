@@ -3,6 +3,7 @@ using System;
 using EatorbeEaten.Script;
 using Godot.Collections;
 
+[GlobalClass]
 public partial class MouseManager : Node3D
 {
 	public Mouse Mouse = null!;
@@ -20,12 +21,17 @@ public partial class MouseManager : Node3D
 
 	private void Timer_OnTimeout()
 	{
+		GoToNewTarget();
+	}
+	
+	public void GoToNewTarget()
+	{		
 		int rnd = Random.Shared.Next(0, 4);
 		Mouse.Target = Positions[(rnd + 1) % Positions.Length];
 		Console.WriteLine(rnd);
 		Mouse.GlobalPosition =  Positions[rnd].GlobalPosition;
 	}
-
+	
 	private void InitMousePoints()
 	{
 		int i = 0;
