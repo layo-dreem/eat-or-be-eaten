@@ -9,7 +9,9 @@ class_name	PlayerController
 @onready var owl_sfx: AudioStreamPlayer = $owlSFX
 @onready var head: Node3D = $Head
 @onready var camera: Camera3D = $Head/Camera3D
-@onready var ray_cast: RayCast3D = $Head/Camera3D/RayCast
+@onready var mouse_raycast: RayCast3D = $Head/Camera3D/MouseRaycast
+@onready var wolf_raycast: RayCast3D = $Head/Camera3D/WolfRaycast
+
 const MOUSE = preload("uid://cn1cde8nx5vc1")
 
 var yaw: float = 0.0
@@ -24,18 +26,17 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("howl") and not owl_sfx.playing:
-		owl_sfx.play()
+		_howl(wolf_raycast.get_collider())
 
-	if Input.is_action_just_pressed("attack") and ray_cast.is_colliding():
-		var c = ray_cast.get_collider()
-		# print(c.to_string())
-		_on_attack(ray_cast.get_collider())
+	if Input.is_action_just_pressed("attack") and mouse_raycast.is_colliding():
+		_on_attack(mouse_raycast.get_collider())
 
 	energy_bar.value = energy
 
+
 func _on_attack(collider: Object) -> void:
 	var node := collider as Node
-	while node != null and not (node is MouseCorpse or node is CharacterBody3D):
+	while node != null and not (node is MouseCorpse or node is Mouse):
 		node = node.get_parent()
 
 	if node == null:
@@ -43,11 +44,33 @@ func _on_attack(collider: Object) -> void:
 
 	if node is MouseCorpse:
 		node.feed(self)
-	elif node is Mouse:
-		# Souris vivante : on la tue
+	else:
 		mouse_corpse.food += 15
 		mouse_manager.call("GoToNewTarget")
-		
+
+
+func _howl(collider: Object) -> void:
+	if energy < 12:
+		return
+	energy -= 12
+	owl_sfx.play()
+
+	var node := collider as Node
+	while node != null and not (node is Wolf):
+		node = node.get_parent()
+
+	if node == null:
+		print("Null")
+		return
+
+	print("wolf trouvé, proximity = ", node.proximity_index)
+	if node.proximity_index > 0:
+		node.proximity_index -= 1
+		if node.position_index + 1 < node.all_positions[node.proximity_index].size():
+			node.position_index += 1
+		else:
+			node.position_index = 0
+		node._move()
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		yaw = clampf(yaw - event.relative.x * look_sensitivity, -TAU, TAU)
@@ -58,13 +81,3 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if event is InputEventMouseButton and event.pressed:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-func _howl(collider: Object) -> void:
-		var node := collider as Node
-		# Remonte jusqu'à trouver une souris vivante ou un cadavre
-		while node != null and not (node is MouseCorpse or node.is_in_group("mouse_alive")):
-			node = node.get_parent()
-			
-		if node == null:
-			return
-		
-		

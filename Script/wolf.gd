@@ -1,5 +1,7 @@
 extends Node3D
 
+class_name Wolf
+
 @export var time_before_action: float #En seconde
 @export var movement_chance:float # En pourcentage
 
@@ -29,9 +31,7 @@ func _on_action_timer_timeout() -> void:
 		if randi_range(0, 1) == 0:
 			if proximity_index < last_row:
 				proximity_index += 1
-				print("Get close")
 			else:
-				print("Perdu")
 				action_timer.stop()
 				return
 		else:
@@ -39,10 +39,11 @@ func _on_action_timer_timeout() -> void:
 				position_index += 1
 			else:
 				position_index = 0
-			print("Not Get close")
 	else:
-		print("Miss")
+		pass
 
 	position_index = mini(position_index, all_positions[proximity_index].size() - 1)
+	_move()
 
+func _move() -> void:	
 	position = all_positions[proximity_index][position_index].global_position

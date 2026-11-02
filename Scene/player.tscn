@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ck3qb2ybir8ah"]
 
-[ext_resource type="Script" uid="uid://b1k3cvh76q05s" path="res://Script/player.gd" id="1_kelma"]
+[ext_resource type="Script" uid="uid://b1k3cvh76q05s" path="res://Script/Player.gd" id="1_kelma"]
 [ext_resource type="AudioStream" uid="uid://bmqvwkcnk5elr" path="res://Sound/SFX/owlSound.ogg" id="2_y8w33"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_8llua"]
@@ -20,8 +20,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.63856137, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1728441406]
 
-[node name="RayCast" type="RayCast3D" parent="Head/Camera3D" unique_id=844477073]
+[node name="MouseRaycast" type="RayCast3D" parent="Head/Camera3D" unique_id=844477073]
 target_position = Vector3(0, 0, -6)
+
+[node name="WolfRaycast" type="RayCast3D" parent="Head/Camera3D" unique_id=1544978987]
+target_position = Vector3(0, 0, -20)
+collide_with_areas = true
 
 [node name="Control" type="Control" parent="." unique_id=1649901572]
 layout_mode = 3
