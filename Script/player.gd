@@ -1,6 +1,6 @@
 extends MeshInstance3D
 
-class_name	Player
+class_name	PlayerController
 @export var look_sensitivity: float = 0.005
 @export var mouse_manager: MouseManager
 @export var mouse_corpse: MouseCorpse
@@ -35,8 +35,7 @@ func _process(_delta: float) -> void:
 
 func _on_attack(collider: Object) -> void:
 	var node := collider as Node
-	# Remonte jusqu'à trouver une souris vivante ou un cadavre
-	while node != null and not (node is MouseCorpse or node.is_in_group("mouse_alive")):
+	while node != null and not (node is MouseCorpse or node is CharacterBody3D):
 		node = node.get_parent()
 
 	if node == null:
@@ -44,10 +43,11 @@ func _on_attack(collider: Object) -> void:
 
 	if node is MouseCorpse:
 		node.feed(self)
-	else:
+	elif node is Mouse:
 		# Souris vivante : on la tue
-		mouse_corpse.food = 100
-		mouse_manager.call("GoToNewTarget") # même nom que dans le C#
+		mouse_corpse.food += 15
+		mouse_manager.call("GoToNewTarget")
+		
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		yaw = clampf(yaw - event.relative.x * look_sensitivity, -TAU, TAU)
@@ -58,3 +58,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if event is InputEventMouseButton and event.pressed:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+func _howl(collider: Object) -> void:
+		var node := collider as Node
+		# Remonte jusqu'à trouver une souris vivante ou un cadavre
+		while node != null and not (node is MouseCorpse or node.is_in_group("mouse_alive")):
+			node = node.get_parent()
+			
+		if node == null:
+			return
+		
+		

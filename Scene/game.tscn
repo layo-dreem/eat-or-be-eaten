@@ -39,6 +39,9 @@ mesh = SubResource("BoxMesh_8llua")
 
 [node name="Player" parent="." unique_id=111026033 node_paths=PackedStringArray("mouse_manager", "mouse_corpse") instance=ExtResource("1_mhtsl")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.16103691, 0.8591072, 0.005580187)
+look_sensitivity = 0.005
+energy = 25
+max_energy = 100
 mouse_manager = NodePath("../MouseManager")
 mouse_corpse = NodePath("../MouseCorpse")
 
