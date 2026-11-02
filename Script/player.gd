@@ -28,7 +28,7 @@ func _process(_delta: float) -> void:
 
 	if Input.is_action_just_pressed("attack") and ray_cast.is_colliding():
 		var c = ray_cast.get_collider()
-		print(c.to_string())
+		# print(c.to_string())
 		_on_attack(ray_cast.get_collider())
 
 	energy_bar.value = energy
