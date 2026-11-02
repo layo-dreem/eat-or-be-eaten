@@ -12,6 +12,7 @@ class_name Wolf
 var all_positions: Array[Array]
 
 @onready var action_timer: Timer = $ActionTimer
+@onready var bush: AudioStreamPlayer3D = $bush
 
 var position_index:int = 0
 var proximity_index:int = 0
@@ -35,6 +36,7 @@ func _on_action_timer_timeout() -> void:
 				action_timer.stop()
 				return
 		else:
+			bush.play()
 			if position_index + 1 < all_positions[proximity_index].size():
 				position_index += 1
 			else:

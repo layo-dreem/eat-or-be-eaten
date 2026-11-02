@@ -1,5 +1,6 @@
 extends Node3D
 class_name MouseCorpse
+@onready var eat_sfx: AudioStreamPlayer = $eatSFX
 
 @export var food: int = 0 # en %
 var canBeAte
@@ -9,6 +10,7 @@ func feed(player: PlayerController) -> void:
 		return
 	food -= 1
 	player.energy = mini(player.energy + 2, player.max_energy)
+	eat_sfx.play()
 
 func _process(delta: float) -> void:
 	if food <= 0:

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://de0qg6ghm2dl3"]
+
+[ext_resource type="Script" uid="uid://d1mjuvfyub65y" path="res://Script/ambiant_sfx_manager.gd" id="1_vomwe"]
+[ext_resource type="AudioStream" uid="uid://c4ctxebot8jam" path="res://Sound/SFX/ambiant.mp3" id="2_oaq42"]
+[ext_resource type="AudioStream" uid="uid://dtnlwnkgxlecs" path="res://Sound/SFX/wind.mp3" id="3_g0o02"]
+[ext_resource type="AudioStream" uid="uid://crvl2tse68jlo" path="res://Sound/SFX/crow.ogg" id="4_oaq42"]
+
+[node name="AmbiantSFXManager" type="Node3D" unique_id=2106903102]
+script = ExtResource("1_vomwe")
+
+[node name="forest" type="AudioStreamPlayer" parent="." unique_id=1233219399]
+stream = ExtResource("2_oaq42")
+
+[node name="wind" type="AudioStreamPlayer" parent="." unique_id=967609085]
+stream = ExtResource("3_g0o02")
+volume_db = -16.0
+autoplay = true
+parameters/looping = true
+
+[node name="crow" type="AudioStreamPlayer" parent="." unique_id=1142102910]
+stream = ExtResource("4_oaq42")
+
+[node name="CrowTimer" type="Timer" parent="." unique_id=810718800]
+
+[connection signal="timeout" from="CrowTimer" to="." method="_on_crow_timer_timeout"]

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bky6kbtmv5x2c"]
 
 [ext_resource type="Script" uid="uid://cwnc5nii4epjo" path="res://Script/MouseCorpse.gd" id="1_6hqnt"]
+[ext_resource type="AudioStream" uid="uid://cllr1f4hxsrv4" path="res://Sound/SFX/eat.mp3" id="2_1460p"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_6hqnt"]
 radius = 0.15527344
@@ -22,3 +23,6 @@ mesh = SubResource("CapsuleMesh_6hqnt")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=20742763]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_1460p")
+
+[node name="eatSFX" type="AudioStreamPlayer" parent="." unique_id=111648604]
+stream = ExtResource("2_1460p")

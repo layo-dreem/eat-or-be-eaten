@@ -4,10 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bb48q8b4t6ej6" path="res://Scene/wolf.tscn" id="2_w51g1"]
 [ext_resource type="PackedScene" uid="uid://dsn3tnc7i120h" path="res://Scene/mouse_manager.tscn" id="3_4jv7b"]
 [ext_resource type="PackedScene" uid="uid://bky6kbtmv5x2c" path="res://Scene/mouse_corpse.tscn" id="4_03iqk"]
+[ext_resource type="PackedScene" uid="uid://de0qg6ghm2dl3" path="res://Scene/ambiant_sfx_manager.tscn" id="5_ihreq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x4ydk"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+sky_top_color = Color(0.010765919, 1.1461135e-06, 0.114400156, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Sky" id="Sky_mhtsl"]
 sky_material = SubResource("ProceduralSkyMaterial_x4ydk")
@@ -15,8 +18,51 @@ sky_material = SubResource("ProceduralSkyMaterial_x4ydk")
 [sub_resource type="Environment" id="Environment_w51g1"]
 background_mode = 2
 sky = SubResource("Sky_mhtsl")
+tonemap_mode = 3
+sdfgi_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_emission = Color(0.48962224, 0.48962224, 0.48962218, 1)
+volumetric_fog_emission_energy = 0.1
+volumetric_fog_gi_inject = 16.0
+volumetric_fog_length = 128.0
+adjustment_enabled = true
+adjustment_brightness = 1.3
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8llua"]
+
+[sub_resource type="Curve" id="Curve_03iqk"]
+_data = [Vector2(0, 1), 0.0, -0.23339237, 0, 0, Vector2(0.98648655, 0.011235952), -2.2172284, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_03iqk"]
+curve = SubResource("Curve_03iqk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ihreq"]
+emission_shape = 2
+emission_sphere_radius = 1.0
+scale_min = 0.099999994
+scale_curve = SubResource("CurveTexture_03iqk")
+
+[sub_resource type="Gradient" id="Gradient_03iqk"]
+offsets = PackedFloat32Array(0, 0.93650794, 0.99206346, 1)
+colors = PackedColorArray(0.93650794, 0.93650794, 0.93650794, 1, 0.49411765, 0.38431373, 0, 0.3764706, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_03iqk"]
+gradient = SubResource("Gradient_03iqk")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ihreq"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_color = Color(0.97872704, 0.95914096, 0.8094442, 1)
+albedo_texture = SubResource("GradientTexture2D_03iqk")
+
+[sub_resource type="QuadMesh" id="QuadMesh_h8jt7"]
+material = SubResource("StandardMaterial3D_ihreq")
+size = Vector2(0.1, 0.1)
 
 [node name="Game" type="Node3D" unique_id=176496745]
 
@@ -25,24 +71,22 @@ environment = SubResource("Environment_w51g1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1092990309]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+visible = false
 shadow_enabled = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2048729503]
+[node name="Plane" type="MeshInstance3D" parent="." unique_id=2048729503]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("PlaneMesh_8llua")
 
 [node name="Player" parent="." unique_id=111026033 node_paths=PackedStringArray("mouse_manager", "mouse_corpse") instance=ExtResource("1_mhtsl")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.16103691, 0.8591072, 0.005580187)
-look_sensitivity = 0.005
-energy = 25
-max_energy = 100
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999998, -0.16103691, 0.8591072, 0.005580187)
 mouse_manager = NodePath("../MouseManager")
 mouse_corpse = NodePath("../MouseCorpse")
 
 [node name="Wolf" parent="." unique_id=1222250232 node_paths=PackedStringArray("far_positions", "middle_positions", "close_positions") instance=ExtResource("2_w51g1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1317439, 0, -1.106039)
-time_before_action = 5.0
-movement_chance = 100.0
+time_before_action = 10.0
+movement_chance = 70.0
 far_positions = [NodePath("../FarPositions/Far1"), NodePath("../FarPositions/Far2"), NodePath("../FarPositions/Far3"), NodePath("../FarPositions/Far4")]
 middle_positions = [NodePath("../MiddlePosition/Middle1"), NodePath("../MiddlePosition/Middle2"), NodePath("../MiddlePosition/Middle3"), NodePath("../MiddlePosition/Middle4")]
 close_positions = [NodePath("../ClosePosition/Close1"), NodePath("../ClosePosition/Close2"), NodePath("../ClosePosition/Close3"), NodePath("../ClosePosition/Close4")]
@@ -97,3 +141,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.082883835, 0, -10.00428)
 [node name="MouseCorpse" parent="." unique_id=1077613647 instance=ExtResource("4_03iqk")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.024627686, -0.92177254)
 food = 10
+
+[node name="ParticuleManager" type="Node3D" parent="." unique_id=1787017911]
+visible = false
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="ParticuleManager" unique_id=1753641381]
+transform = Transform3D(2.5152507, 0, 0, 0, 1, 0, 0, 0, 2.7907493, 0, 4.015, 0)
+transform_align = 1
+transform_align_channel_filter = 1
+process_material = SubResource("ParticleProcessMaterial_ihreq")
+draw_pass_1 = SubResource("QuadMesh_h8jt7")
+
+[node name="AmbiantSFXManager" parent="." unique_id=2106903102 instance=ExtResource("5_ihreq")]
+min_delay = 10.0
+max_delay = 30.0

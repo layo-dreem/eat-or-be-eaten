@@ -8,9 +8,6 @@
 [node name="Player" type="MeshInstance3D" unique_id=111026033]
 mesh = SubResource("CapsuleMesh_8llua")
 script = ExtResource("1_kelma")
-look_sensitivity = null
-energy = null
-max_energy = null
 
 [node name="owlSFX" type="AudioStreamPlayer" parent="." unique_id=394510368]
 stream = ExtResource("2_y8w33")
@@ -21,11 +18,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.63856137, 0)
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=1728441406]
 
 [node name="MouseRaycast" type="RayCast3D" parent="Head/Camera3D" unique_id=844477073]
-target_position = Vector3(0, 0, -6)
+target_position = Vector3(0, 0, -6.5)
 
 [node name="WolfRaycast" type="RayCast3D" parent="Head/Camera3D" unique_id=1544978987]
 target_position = Vector3(0, 0, -20)
 collide_with_areas = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera3D" unique_id=1693296036]
+light_volumetric_fog_energy = 0.1
+spot_range = 100.0
+spot_attenuation = 0.5
+spot_angle_attenuation = 3.0
 
 [node name="Control" type="Control" parent="." unique_id=1649901572]
 layout_mode = 3

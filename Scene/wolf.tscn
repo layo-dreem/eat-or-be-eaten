@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bb48q8b4t6ej6"]
 
 [ext_resource type="Script" uid="uid://b57lljb54b6g" path="res://Script/Wolf.gd" id="1_vd1m1"]
+[ext_resource type="AudioStream" uid="uid://bmnx8ghgy6dis" path="res://Sound/SFX/bush.mp3" id="2_8tsp6"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_8llua"]
 
@@ -18,5 +19,8 @@ mesh = SubResource("PrismMesh_8llua")
 shape = SubResource("BoxShape3D_bc6aj")
 
 [node name="ActionTimer" type="Timer" parent="." unique_id=488703853]
+
+[node name="bush" type="AudioStreamPlayer3D" parent="." unique_id=199420140]
+stream = ExtResource("2_8tsp6")
 
 [connection signal="timeout" from="ActionTimer" to="." method="_on_action_timer_timeout"]

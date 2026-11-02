@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dpq0hpib2wnma"]
-
-[ext_resource type="Script" uid="uid://vuuj8pp77qdj" path="res://Script/MouseCorpseManager.gd" id="1_76dol"]
-
-[node name="MouseCorpseManager" type="Node3D" unique_id=1299505697]
-script = ExtResource("1_76dol")

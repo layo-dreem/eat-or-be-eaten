@@ -5,6 +5,7 @@ namespace EatorbeEaten.Script;
 [GlobalClass, Tool]
 public partial class Mouse : CharacterBody3D
 {
+	[Export] public AudioStreamPlayer3D? SqueakSfx;
 	public Node3D? Target;
 
 	public override void _PhysicsProcess(double delta)
