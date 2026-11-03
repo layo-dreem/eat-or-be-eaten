@@ -1,13 +1,14 @@
 extends Node3D
 
 class_name Wolf
-
 @export var time_before_action: float #En seconde
 @export var movement_chance:float # En pourcentage
 
 @export var far_positions: Array[Node3D]
 @export var middle_positions: Array[Node3D]
 @export var close_positions: Array[Node3D]
+
+@export var player: PlayerController
 
 var all_positions: Array[Array]
 
@@ -34,6 +35,7 @@ func _on_action_timer_timeout() -> void:
 				proximity_index += 1
 			else:
 				action_timer.stop()
+				player._game_over()
 				return
 		else:
 			bush.play()

@@ -16,11 +16,12 @@ public partial class Mouse : CharacterBody3D
 	public Node3D? Target
 	{
 		get;
-		set
-		{
-			field = value;
-			_sprite.Visible = field != null;
-		}
+		set;
+	}
+	
+	public override void _Process(double delta)
+	{
+		_sprite.Visible = Target != null;
 	}
 
 	public void Die()

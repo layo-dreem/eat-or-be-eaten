@@ -21,7 +21,7 @@ public partial class MouseManager : Node3D
 
 	private void Timer_OnTimeout()
 	{
-		int rnd = Random.Shared.Next(0, 1);
+		int rnd = Random.Shared.Next(0, 4);
 		Mouse.Target = Positions[(rnd + 1) % Positions.Length];
 		Console.WriteLine(rnd);
 		Mouse.GlobalPosition =  Positions[rnd].GlobalPosition;
@@ -29,7 +29,8 @@ public partial class MouseManager : Node3D
 	
 	public void GoToNewTarget()
 	{		
-		Mouse.GlobalPosition = Mouse.Target.GlobalPosition;
+		if (Mouse.Target != null)
+			Mouse.GlobalPosition = Mouse.Target.GlobalPosition;
 	}
 	
 	private void InitMousePoints()
@@ -47,7 +48,7 @@ public partial class MouseManager : Node3D
 					if (body is Mouse mouse && mouse.Target == point)
 					{
 						mouse.Target = null;
-						_timer.WaitTime = Random.Shared.Next(1, 2);
+						_timer.WaitTime = Random.Shared.Next(1, 15);
 						_timer.Start();
 					}
 				};

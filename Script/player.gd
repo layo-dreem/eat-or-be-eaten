@@ -11,6 +11,7 @@ class_name	PlayerController
 @onready var camera: Camera3D = $Head/Camera3D
 @onready var mouse_raycast: RayCast3D = $Head/Camera3D/MouseRaycast
 @onready var wolf_raycast: RayCast3D = $Head/Camera3D/WolfRaycast
+@onready var transition: Transition = $Transition
 
 const MOUSE = preload("uid://cn1cde8nx5vc1")
 
@@ -44,10 +45,16 @@ func _on_attack(collider: Object) -> void:
 
 	if node is MouseCorpse:
 		node.feed(self)
+		if energy >= 100:
+			$"You Win".show()
+			$AnimationPlayer.play("FlyAway")
+			transition.show()
+			transition._transition()
+			$Timer.start()
+			
 	else:
-		mouse_corpse.food += 15
+		mouse_corpse.food += 5
 		mouse_manager.call("GoToNewTarget")
-
 
 func _howl(collider: Object) -> void:
 	if energy < 12:
@@ -81,3 +88,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if event is InputEventMouseButton and event.pressed:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _game_over() -> void:
+	$"Game Over".show()
+	transition.show()
+	transition._transition()
+	$Timer.start()
+
+
+func _on_timer_timeout() -> void:
+	get_tree().quit()
