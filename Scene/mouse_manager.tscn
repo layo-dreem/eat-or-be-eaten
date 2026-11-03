@@ -8,7 +8,7 @@
 script = ExtResource("1_ap7it")
 
 [node name="Mouse" parent="." unique_id=1398547238 instance=ExtResource("2_genxp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9407601, 0, 2.9429512)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9407601, 1.191098, 2.9429512)
 
 [node name="MousePoints" type="Node3D" parent="." unique_id=201031917]
 

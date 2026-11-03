@@ -21,16 +21,15 @@ public partial class MouseManager : Node3D
 
 	private void Timer_OnTimeout()
 	{
-		GoToNewTarget();
+		int rnd = Random.Shared.Next(0, 1);
+		Mouse.Target = Positions[(rnd + 1) % Positions.Length];
+		Console.WriteLine(rnd);
+		Mouse.GlobalPosition =  Positions[rnd].GlobalPosition;
 	}
 	
 	public void GoToNewTarget()
 	{		
-		Mouse.SqueakSfx.Play();
-		int rnd = Random.Shared.Next(0, 4);
-		Mouse.Target = Positions[(rnd + 1) % Positions.Length];
-		Console.WriteLine(rnd);
-		Mouse.GlobalPosition =  Positions[rnd].GlobalPosition;
+		Mouse.GlobalPosition = Mouse.Target.GlobalPosition;
 	}
 	
 	private void InitMousePoints()
@@ -48,7 +47,7 @@ public partial class MouseManager : Node3D
 					if (body is Mouse mouse && mouse.Target == point)
 					{
 						mouse.Target = null;
-						_timer.WaitTime = Random.Shared.Next(7, 16);
+						_timer.WaitTime = Random.Shared.Next(1, 2);
 						_timer.Start();
 					}
 				};

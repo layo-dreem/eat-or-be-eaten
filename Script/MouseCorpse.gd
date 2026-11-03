@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 	if food <= 0:
 		food = 0
 		canBeAte = false
-		$MeshInstance3D.hide()
+		$Sprite3D.hide()
 	else:
 		canBeAte = true
-		$MeshInstance3D.show()
+		$Sprite3D.show()
