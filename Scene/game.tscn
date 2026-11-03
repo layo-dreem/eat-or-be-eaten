@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dsn3tnc7i120h" path="res://Scene/mouse_manager.tscn" id="3_4jv7b"]
 [ext_resource type="PackedScene" uid="uid://bky6kbtmv5x2c" path="res://Scene/mouse_corpse.tscn" id="4_03iqk"]
 [ext_resource type="PackedScene" uid="uid://de0qg6ghm2dl3" path="res://Scene/ambiant_sfx_manager.tscn" id="5_ihreq"]
+[ext_resource type="Texture2D" uid="uid://bhi4jk3biyufo" path="res://Sprite/trees.png" id="6_thj8p"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x4ydk"]
 sky_top_color = Color(0.010765919, 1.1461135e-06, 0.114400156, 1)
@@ -71,7 +72,6 @@ environment = SubResource("Environment_w51g1")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1092990309]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
-visible = false
 shadow_enabled = true
 
 [node name="Plane" type="MeshInstance3D" parent="." unique_id=2048729503]
@@ -155,3 +155,29 @@ draw_pass_1 = SubResource("QuadMesh_h8jt7")
 [node name="AmbiantSFXManager" parent="." unique_id=2106903102 instance=ExtResource("5_ihreq")]
 min_delay = 10.0
 max_delay = 30.0
+
+[node name="Background" type="Node3D" parent="." unique_id=975531977]
+
+[node name="Sprite3D" type="Sprite3D" parent="Background" unique_id=1972926157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 10.248379)
+cast_shadow = 0
+shaded = true
+texture = ExtResource("6_thj8p")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Background" unique_id=816961642]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -9.751621)
+cast_shadow = 0
+shaded = true
+texture = ExtResource("6_thj8p")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Background" unique_id=629114637]
+transform = Transform3D(-8.742278e-08, 0, -1, 0, 1, 0, 1, 0, -8.742278e-08, 10, 5, 3.1728783)
+cast_shadow = 0
+shaded = true
+texture = ExtResource("6_thj8p")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Background" unique_id=1100650020]
+transform = Transform3D(-8.742278e-08, 0, -1, 0, 1, 0, 1, 0, -8.742278e-08, -10.397461, 5, 0.06675339)
+cast_shadow = 0
+shaded = true
+texture = ExtResource("6_thj8p")

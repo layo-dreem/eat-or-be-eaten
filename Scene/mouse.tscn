@@ -2,10 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bni034sfsdm7j" path="res://Script/Mouse.cs" id="1_i8p2k"]
 [ext_resource type="AudioStream" uid="uid://dmb75g706g4fs" path="res://Sound/SFX/mice.mp3" id="2_si2j3"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_m13ap"]
-radius = 0.15527344
-height = 0.53808594
+[ext_resource type="Texture2D" uid="uid://cdcgyuqfgem57" path="res://Sprite/mice.png" id="3_cxsna"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_m13ap"]
 radius = 0.16113281
@@ -15,13 +12,15 @@ height = 0.53808594
 script = ExtResource("1_i8p2k")
 SqueakSfx = NodePath("miceSFX")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1692233929]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_m13ap")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1654980905]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_m13ap")
 
 [node name="miceSFX" type="AudioStreamPlayer3D" parent="." unique_id=443548488]
 stream = ExtResource("2_si2j3")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=151658974]
+transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, 0, 0.07212052, 0)
+billboard = 2
+shaded = true
+texture = ExtResource("3_cxsna")
