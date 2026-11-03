@@ -6,7 +6,22 @@ namespace EatorbeEaten.Script;
 public partial class Mouse : CharacterBody3D
 {
 	[Export] public AudioStreamPlayer3D? SqueakSfx;
-	public Node3D? Target;
+	private Sprite3D _sprite;
+
+	public override void _Ready()
+	{
+		_sprite = GetNode<Sprite3D>("Sprite3D");
+	}
+	
+	public Node3D? Target
+	{
+		get;
+		set
+		{
+			field = value;
+			_sprite.Visible = field != null;
+		}
+	}
 
 	public void Die()
 	{

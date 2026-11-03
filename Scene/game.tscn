@@ -137,7 +137,7 @@ max_delay = 30.0
 [node name="Background" type="Node3D" parent="." unique_id=975531977]
 
 [node name="Sprite3D" type="Sprite3D" parent="Background" unique_id=1972926157]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 10.248379)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 5, 10.248379)
 cast_shadow = 0
 shaded = true
 texture = ExtResource("6_thj8p")
@@ -149,200 +149,163 @@ shaded = true
 texture = ExtResource("6_thj8p")
 
 [node name="Sprite3D3" type="Sprite3D" parent="Background" unique_id=629114637]
-transform = Transform3D(-8.742278e-08, 0, -1, 0, 1, 0, 1, 0, -8.742278e-08, 10, 5, 3.1728783)
+transform = Transform3D(-8.742278e-08, 0, -1, 0, 1, 0, 1, 0, -8.742278e-08, 10, 5, 0.0816865)
 cast_shadow = 0
 shaded = true
 texture = ExtResource("6_thj8p")
 
 [node name="Sprite3D4" type="Sprite3D" parent="Background" unique_id=1100650020]
-transform = Transform3D(-8.742278e-08, 0, -1, 0, 1, 0, 1, 0, -8.742278e-08, -10.397461, 5, 0.06675339)
+transform = Transform3D(1.7484555e-07, 0, 1, 0, 1, 0, -1, 0, 1.7484555e-07, -10.397461, 5, 0.06675339)
 cast_shadow = 0
 shaded = true
 texture = ExtResource("6_thj8p")
 
-[node name="Gress" type="Node3D" parent="." unique_id=116955109]
+[node name="Grass" type="Node3D" parent="." unique_id=116955109]
 
-[node name="Sprite3D" type="Sprite3D" parent="Gress" unique_id=915911797]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.6897306, 1.0231404, 5.163495)
-billboard = 2
+[node name="Sprite3D" type="Sprite3D" parent="Grass" unique_id=915911797]
+transform = Transform3D(0.14805016, -0.019514663, 0.13304259, 0, 0.19788261, 0.029025389, -0.13446617, -0.021486064, 0.14648275, 4.6897306, 1.0231404, 5.163495)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D2" type="Sprite3D" parent="Gress" unique_id=357731612]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.762569, 1.0231404, 6.972825)
-billboard = 2
+[node name="Sprite3D2" type="Sprite3D" parent="Grass" unique_id=357731612]
+transform = Transform3D(0.18593858, 0.009957171, -0.072991125, 0, 0.19816464, 0.027032867, 0.07366715, -0.025132263, 0.18423226, -2.762569, 1.0231404, 6.972825)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D3" type="Sprite3D" parent="Gress" unique_id=827859240]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 6.3108263, 1.0231404, 7.775008)
-billboard = 2
+[node name="Sprite3D3" type="Sprite3D" parent="Grass" unique_id=827859240]
+transform = Transform3D(0.15528503, -0.012811318, 0.12538911, 0, 0.19896418, 0.020328667, -0.1260419, -0.015783688, 0.1544808, 6.3108263, 1.0231404, 7.775008)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D4" type="Sprite3D" parent="Gress" unique_id=1368330711]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -7.608651, 1.0231404, 3.9272242)
-billboard = 2
+[node name="Sprite3D4" type="Sprite3D" parent="Grass" unique_id=1368330711]
+transform = Transform3D(0.09173187, 0.02108645, -0.17646706, 0, 0.19858728, 0.023729645, 0.17772244, -0.010883824, 0.09108391, -7.608651, 1.0231404, 3.9272242)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D5" type="Sprite3D" parent="Gress" unique_id=235983014]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -5.6464043, 1.0231404, 0.3400364)
-billboard = 2
+[node name="Sprite3D5" type="Sprite3D" parent="Grass" unique_id=235983014]
+transform = Transform3D(0.012022577, 0.035532914, -0.19645068, 0, 0.1968066, 0.035597287, 0.19963832, -0.0021398556, 0.011830612, -5.6464043, 1.0231404, 0.3400364)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D6" type="Sprite3D" parent="Gress" unique_id=1368850848]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.34339523, 1.0231404, 2.6914053)
-billboard = 2
+[node name="Sprite3D6" type="Sprite3D" parent="Grass" unique_id=1368850848]
+transform = Transform3D(0.1983917, -0.008931354, 0.023684686, 0, 0.1871367, 0.07056813, -0.025312712, -0.070000656, 0.18563183, 0.061674833, 1.2337832, 3.4159398)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D7" type="Sprite3D" parent="Gress" unique_id=609704013]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 7.5985336, 1.0231404, 2.6914053)
-billboard = 2
+[node name="Sprite3D7" type="Sprite3D" parent="Grass" unique_id=609704013]
+transform = Transform3D(0.06677511, -0.023737554, 0.18702303, 0, 0.19840826, 0.025182603, -0.18852344, -0.008407856, 0.06624367, 7.5985336, 1.0231404, 2.6914053)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D8" type="Sprite3D" parent="Gress" unique_id=1951547705]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 7.5985336, 1.0231404, -3.6234684)
-billboard = 2
+[node name="Sprite3D8" type="Sprite3D" parent="Grass" unique_id=1951547705]
+transform = Transform3D(-0.086085826, -0.02178038, 0.17920616, 0, 0.19853902, 0.02413006, -0.18052487, 0.01038628, -0.08545698, 7.5985336, 1.0231404, -3.6234684)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D33" type="Sprite3D" parent="Gress" unique_id=215804147]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.6917424, 1.6463952, -4.5567155)
-billboard = 2
+[node name="Sprite3D33" type="Sprite3D" parent="Grass" unique_id=215804147]
+transform = Transform3D(-0.20901267, -0.05253474, 0.2086955, 0, 0.290924, 0.07323405, -0.2152062, 0.051022816, -0.20268933, 4.6917424, 1.6463952, -4.5567155)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D34" type="Sprite3D" parent="Gress" unique_id=437455738]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.6917424, 1.6463952, 4.816523)
-billboard = 2
+[node name="Sprite3D34" type="Sprite3D" parent="Grass" unique_id=437455738]
+transform = Transform3D(0.21489741, -0.049785007, 0.20332377, 0, 0.29139203, 0.07134903, -0.20933013, -0.051109076, 0.20873131, 4.303601, 1.6463952, 4.34492)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D35" type="Sprite3D" parent="Gress" unique_id=1831489095]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.834314, 1.6463952, 4.816523)
-billboard = 2
+[node name="Sprite3D35" type="Sprite3D" parent="Grass" unique_id=1831489095]
+transform = Transform3D(0.21174063, 0.049842943, -0.20659524, 0, 0.29163268, 0.070358984, 0.21252273, -0.04965952, 0.20583497, -4.9395504, 1.6463952, 4.097976)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D36" type="Sprite3D" parent="Gress" unique_id=2022763281]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.834314, 1.6463952, -4.8418)
-billboard = 2
+[node name="Sprite3D36" type="Sprite3D" parent="Grass" unique_id=2022763281]
+transform = Transform3D(-0.2975252, -0.008996552, 0.037387628, -4.334028e-09, 0.29167452, 0.07018535, -0.038454812, 0.06960635, -0.28926834, 0.7116184, 1.6463952, -6.096417)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D37" type="Sprite3D" parent="Gress" unique_id=1374786884]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.834314, 1.6463952, -4.8418)
-billboard = 2
+[node name="Sprite3D37" type="Sprite3D" parent="Grass" unique_id=1374786884]
+transform = Transform3D(-0.2122961, 0.049590122, -0.2060854, 0, 0.29167452, 0.07018535, 0.21196786, 0.04966692, -0.20640454, -4.151188, 1.6463952, -4.5771914)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D9" type="Sprite3D" parent="Gress" unique_id=1503477967]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.351367, 1.0231404, -6.2980127)
-billboard = 2
+[node name="Sprite3D9" type="Sprite3D" parent="Grass" unique_id=1503477967]
+transform = Transform3D(-0.19994041, 0.0006928686, -0.004831277, -8.453438e-11, 0.19797441, 0.028392248, 0.004880704, 0.028383795, -0.19791546, 0.108719826, 1.0231404, -7.2394257)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D10" type="Sprite3D" parent="Gress" unique_id=341313843]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -5.3522825, 1.0231404, -7.3947086)
-billboard = 2
+[node name="Sprite3D10" type="Sprite3D" parent="Grass" unique_id=341313843]
+transform = Transform3D(-0.16201451, 0.01306168, -0.11653624, 0, 0.19875547, 0.022277024, 0.11726594, 0.018046005, -0.16100635, -5.3522825, 1.0231404, -7.3947086)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D11" type="Sprite3D" parent="Gress" unique_id=1756490907]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.5448208, 1.0231404, -3.106494)
-billboard = 2
+[node name="Sprite3D11" type="Sprite3D" parent="Grass" unique_id=1756490907]
+transform = Transform3D(-0.15471469, 0.031291585, -0.12281777, 0, 0.19380854, 0.049378656, 0.12674133, 0.038198017, -0.14992514, -2.5448208, 1.0231404, -3.106494)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D18" type="Sprite3D" parent="Gress" unique_id=2125887760]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 1.8315649, 1.0231404, 5.604537)
-billboard = 2
+[node name="Sprite3D18" type="Sprite3D" parent="Grass" unique_id=2125887760]
+transform = Transform3D(0.19010596, -0.010621786, 0.06121197, 0, 0.19705527, 0.034193948, -0.062126704, -0.032502364, 0.18730688, 1.8315649, 1.0231404, 5.604537)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D19" type="Sprite3D" parent="Gress" unique_id=948301405]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.8234186, 1.0231404, 5.604537)
-billboard = 2
+[node name="Sprite3D19" type="Sprite3D" parent="Grass" unique_id=948301405]
+transform = Transform3D(0.19787578, 0.005167268, -0.028609011, 0, 0.19681548, 0.035548184, 0.029071912, -0.035170622, 0.19472507, -0.8234186, 1.0231404, 5.604537)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D20" type="Sprite3D" parent="Gress" unique_id=36049501]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -5.5520525, 1.0231404, 5.8496566)
-billboard = 2
+[node name="Sprite3D20" type="Sprite3D" parent="Grass" unique_id=36049501]
+transform = Transform3D(0.1450633, 0.01732791, -0.1365884, 0, 0.19840978, 0.025170712, 0.13768314, -0.018256731, 0.14390987, -5.5520525, 1.0231404, 5.8496566)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D21" type="Sprite3D" parent="Gress" unique_id=2018288182]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -3.505808, 1.0231404, -6.4761295)
-billboard = 2
+[node name="Sprite3D21" type="Sprite3D" parent="Grass" unique_id=2018288182]
+transform = Transform3D(-0.19998114, -0.00037791207, 0.002720043, -7.093894e-10, 0.19809724, 0.027522642, -0.0027461872, 0.027520048, -0.19807857, 0.7217672, 1.0231404, -9.0328045)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D22" type="Sprite3D" parent="Gress" unique_id=683201670]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -8.142163, 1.0231404, -5.1530266)
-billboard = 2
+[node name="Sprite3D22" type="Sprite3D" parent="Grass" unique_id=683201670]
+transform = Transform3D(-0.106955945, 0.017844139, -0.1680536, 0, 0.198882, 0.021117536, 0.1689983, 0.011293231, -0.106358066, -8.142163, 1.0231404, -5.1530266)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D23" type="Sprite3D" parent="Gress" unique_id=2013308963]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.02419, 1.0231404, 7.0145082)
-billboard = 2
+[node name="Sprite3D23" type="Sprite3D" parent="Grass" unique_id=2013308963]
+transform = Transform3D(0.18365821, -0.010511853, 0.078480355, 0, 0.19822973, 0.02655138, -0.07918122, -0.024381896, 0.18203259, 3.02419, 1.0231404, 7.0145082)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D24" type="Sprite3D" parent="Gress" unique_id=930763407]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 8.1071205, 1.0231404, 7.0145082)
-billboard = 2
+[node name="Sprite3D24" type="Sprite3D" parent="Grass" unique_id=930763407]
+transform = Transform3D(0.1308618, -0.014369261, 0.15056133, 0, 0.19909534, 0.019001245, -0.15124546, -0.012432686, 0.13026987, 8.1071205, 1.0231404, 7.0145082)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D25" type="Sprite3D" parent="Gress" unique_id=1634490993]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 8.1071205, 1.0231404, -7.281602)
-billboard = 2
+[node name="Sprite3D25" type="Sprite3D" parent="Grass" unique_id=1634490993]
+transform = Transform3D(-0.13364276, -0.013909223, 0.14814232, 0, 0.19912425, 0.018695964, -0.14879386, 0.0124929, -0.13305756, 8.1071205, 1.0231404, -7.281602)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D26" type="Sprite3D" parent="Gress" unique_id=2123138184]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -5.386608, 1.0231404, -1.0982869)
-billboard = 2
+[node name="Sprite3D26" type="Sprite3D" parent="Grass" unique_id=2123138184]
+transform = Transform3D(-0.016251981, 0.036473073, -0.19597344, 0, 0.19662367, 0.036594097, 0.19933863, 0.002973631, -0.015977621, -8.18687, 1.0231404, 0.26910615)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D27" type="Sprite3D" parent="Gress" unique_id=2147117705]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -3.1388946, 1.0231404, 2.2355735)
-billboard = 2
+[node name="Sprite3D27" type="Sprite3D" parent="Grass" unique_id=2147117705]
+transform = Transform3D(0.11602437, 0.04180334, -0.15745103, 0, 0.19330299, 0.051322054, 0.16290595, -0.029773045, 0.112139285, -3.1388946, 1.0231404, 2.2355735)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D28" type="Sprite3D" parent="Gress" unique_id=1078454355]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.4272058, 1.0231404, -4.483062)
-billboard = 2
+[node name="Sprite3D28" type="Sprite3D" parent="Grass" unique_id=1078454355]
+transform = Transform3D(-0.19909807, -0.004203373, 0.01850122, 0, 0.19502988, 0.044309687, -0.018972704, 0.044109866, -0.19415036, 0.4272058, 1.0231404, -4.483062)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D29" type="Sprite3D" parent="Gress" unique_id=155867100]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 3.3611546, 1.0231404, 1.5211506)
-billboard = 2
+[node name="Sprite3D29" type="Sprite3D" parent="Grass" unique_id=155867100]
+transform = Transform3D(0.08246186, -0.048692953, 0.175582, 0, 0.19272617, 0.053447425, -0.18220879, -0.022036871, 0.07946279, 3.3611546, 1.0231404, 1.5211506)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D30" type="Sprite3D" parent="Gress" unique_id=139413906]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -7.553322, 1.0231404, 7.8308)
-billboard = 2
+[node name="Sprite3D30" type="Sprite3D" parent="Grass" unique_id=139413906]
+transform = Transform3D(0.14394872, 0.01299974, -0.13823812, 0, 0.1991215, 0.01872514, 0.13884799, -0.013477298, 0.14331643, -7.553322, 1.0231404, 7.8308)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D31" type="Sprite3D" parent="Gress" unique_id=750244581]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.9879761, 1.0231404, -6.9198275)
-billboard = 2
+[node name="Sprite3D31" type="Sprite3D" parent="Grass" unique_id=750244581]
+transform = Transform3D(-0.19991384, -0.00085016456, 0.0058082454, -4.2123022e-10, 0.19789137, 0.028965754, -0.0058701336, 0.028953273, -0.19780609, -0.24109077, 1.0231404, -7.8350906)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D32" type="Sprite3D" parent="Gress" unique_id=1994776559]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -6.8636875, 1.0231404, -3.0101144)
-billboard = 2
+[node name="Sprite3D32" type="Sprite3D" parent="Grass" unique_id=1994776559]
+transform = Transform3D(-0.08032616, 0.024774285, -0.18147713, 0, 0.19816203, 0.027052019, 0.18316035, 0.010864924, -0.07958797, -8.469038, 1.0231404, -2.7345712)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D12" type="Sprite3D" parent="Gress" unique_id=2024656925]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 5.624751, 1.0231404, -7.337891)
-billboard = 2
+[node name="Sprite3D12" type="Sprite3D" parent="Grass" unique_id=2024656925]
+transform = Transform3D(-0.15873134, -0.013382847, 0.12093494, 0, 0.19878654, 0.021998027, -0.12167317, 0.017458882, -0.15776826, 5.624751, 1.0231404, -7.337891)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D13" type="Sprite3D" parent="Gress" unique_id=479202698]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.3662496, 1.0231404, -7.337891)
-billboard = 2
+[node name="Sprite3D13" type="Sprite3D" parent="Grass" unique_id=479202698]
+transform = Transform3D(-0.0026451536, -0.027158966, 0.1981297, 1.6209666e-09, 0.19814706, 0.027161343, -0.19998248, 0.00035922695, -0.0026206337, 7.4571133, 1.0231409, -0.8465829)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D14" type="Sprite3D" parent="Gress" unique_id=172698466]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -1.3662496, 1.0231404, -2.2875667)
-billboard = 2
+[node name="Sprite3D14" type="Sprite3D" parent="Grass" unique_id=172698466]
+transform = Transform3D(-0.15121874, -0.04692101, 0.12219375, 0, 0.18670832, 0.07169386, -0.13089268, 0.05420728, -0.14116898, 1.9967074, 1.0231404, -2.758381)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D15" type="Sprite3D" parent="Gress" unique_id=806768644]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.8331738, 1.0231404, -2.2875667)
-billboard = 2
+[node name="Sprite3D15" type="Sprite3D" parent="Grass" unique_id=806768644]
+transform = Transform3D(-0.08556132, -0.03397325, 0.17755304, 0, 0.1964364, 0.03758642, -0.18077406, 0.016079718, -0.08403679, 4.8331738, 1.0231404, -2.2875667)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D16" type="Sprite3D" parent="Gress" unique_id=725533900]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 4.8331738, 1.0231404, 0.76199865)
-billboard = 2
+[node name="Sprite3D16" type="Sprite3D" parent="Grass" unique_id=725533900]
+transform = Transform3D(0.031147296, -0.040436767, 0.19337712, 0, 0.19576573, 0.040936243, -0.19755973, -0.0063752667, 0.030487865, 4.8331738, 1.0231404, 0.76199865)
 texture = ExtResource("7_h8jt7")
 
-[node name="Sprite3D17" type="Sprite3D" parent="Gress" unique_id=2025973854]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -6.0976057, 1.0231404, -3.742247)
-billboard = 2
+[node name="Sprite3D17" type="Sprite3D" parent="Grass" unique_id=2025973854]
+transform = Transform3D(-0.10461408, 0.024131479, -0.16874112, 0, 0.1979857, 0.028313711, 0.1704579, 0.014810065, -0.10356045, -6.333908, 1.0231404, -5.310803)
 texture = ExtResource("7_h8jt7")
